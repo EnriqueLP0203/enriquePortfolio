@@ -1,2 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Momo Trust Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Momo Trust Display", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    @apply font-sans antialiased;
+  }
+}
