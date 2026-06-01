@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "components-build": {
+      "source": "nolly-studio/cult-ui",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/components-build/SKILL.md",
+      "computedHash": "90c6fe34124ab35715a94eb34da47ef93f2db4f35659dbf3892468c001cd79ae"
+    }
+  }
+}
