@@ -1,194 +1,125 @@
-import React from "react";
 import avatar from "../assets/avatar.webp";
-import html from "../assets/html.webp";
-import js from "../assets/js.webp";
-import css from "../assets/css.webp";
-import azure from "../assets/azure.webp";
-import aws from "../assets/aws.webp";
-import vercel from "../assets/vercel.webp";
-import tailwind from "../assets/tailwind.webp";
-import react from "../assets/react.webp";
-import figma from "../assets/figma.webp";
-import node from "../assets/node.webp";
-import express from "../assets/express.webp";
-import native from "../assets/native.webp";
-import git from "../assets/git.webp";
-import github from "../assets/github.webp";
+import SkillCard from "../components/SkillCard";
+import ProjectCard from "../components/ProjectCard";
+import ContactSection from "../components/ContactSection";
+import { skills } from "../data/skills";
+import { projects } from "../data/projects";
+import StickyNav from "../components/StickyNav";
+import { cardShadow, pillButton } from "../lib/styles";
+
+const stagger = (index) => ({
+  animationDelay: `${index * 0.5}s`,
+});
 
 export default function Home() {
   return (
     <div>
-      {/* seccion de inicio */}
-      <div className="flex grid-cols-3 items-center justify-center p-64">
-        <h1 className="text-align-left">I am Enrique Castillo Rodriguez </h1>
-        <img
-          src={avatar}
-          alt="avatar"
-          className="w-[459px] h-[459px] rounded-full"
-        />
-        <p className="text-align-left">
+      {/* Hero */}
+      <header className="grid min-h-[70vh] grid-cols-1 items-center gap-10 px-6 py-20 lg:grid-cols-3 lg:px-16 lg:py-32">
+        <h1
+          className="animate-fade-in-up text-right text-3xl lg:text-4xl"
+          style={stagger(0)}
+        >
+          I am Enrique Castillo Rodriguez
+        </h1>
+        <div
+          className="animate-fade-in flex justify-center"
+          style={stagger(1)}
+        >
+          <img
+            src={avatar}
+            alt="Enrique Castillo Rodriguez"
+            className="animate-float size-56 rounded-full object-cover shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] ring-4 ring-white/80 md:size-72 lg:size-[459px]"
+          />
+        </div>
+        <p
+          className="animate-fade-in-up text-left text-3xl font-[Momo_Trust_Sans] md:text-3xl"
+          style={stagger(2)}
+        >
           Desarrollador de software multiplataforma
         </p>
-      </div>
-      {/* barra de navegacion */}
-      <div className="flex justify-center items-center">
-        <div className="mb-10 flex justify-center items-center gap-24 w-3xl h-16 bg-gray-200 rounded-full bg-gradient-to-b from-white to-sky-500 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-stone-300">
-          <a href="#about-me" className="text-xl font-medium">
-            About me
-          </a>
-          <a href="#skills" className="text-xl font-medium">
-            Skills
-          </a>
-          <a href="#proyects" className="text-xl font-medium">
-            Proyects
-          </a>
-          <a href="#contact" className="text-xl font-medium">
-            Contact
-          </a>
-        </div>
-      </div>
-      {/* seccion de about me */}
-      <div id="about-me" className="mb-10">
-        <div className="grid grid-cols-2">
-          <div className="w-2xl h-96 rounded-20 bg-gray-200"></div>
-          <div>
-            <h1 className="text-2xl font-bold mb-10">About me</h1>
-            <p className="text-base font-normal mb-10">
-              Desarrollador Full Stack enfocado en la creación de aplicaciones
-              web modernas, escalables y centradas en la experiencia de usuario.
-              Actualmente trabajo con tecnologías como React, Node.js, Express,
-              PostgreSQL y MongoDB, desarrollando soluciones frontend y backend
-              para distintos tipos de proyectos web. Me interesa construir
-              sistemas funcionales, bien estructurados y preparados para crecer
-              con el tiempo.
-            </p>
-            <p className="text-base font-normal mb-10">
-              Soy autodidacta, adaptable y aprendo rápido, cualidades que me han
-              permitido evolucionar constantemente dentro del desarrollo de
-              software y explorar nuevas herramientas y tecnologías.Busco seguir
-              creciendo profesionalmente colaborando en proyectos reales,
-              trabajando con equipos de desarrollo y creando soluciones
-              digitales que generen impacto.
-            </p>
-            <button className="w-48 h-12 bg-gradient-to-b from-white to-sky-500 text-black text-base font-medium px-4 py-2 rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-stone-300">
-              Descargar CV
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* seccion de skills */}
-      <div className="mb-10 mx-2">
-        <div className="flex justify-center items-center">
-          <h1 className="text-2xl font-bold mb-10 w-2xl text-center">SKILLS Y HERRAMIENTAS QUE  SIEMPRE USO</h1>
-        </div>
-        <div className="grid grid-cols-3">
-          {/* primer columna */}
-          <div className="flex flex-col gap-4">
-            {/* frontend development */}
-            <div className="w-lg h-80 p-4 rounded-2xl bg-sky-500/20 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-white">
-              <div className="flex justify-center items-center gap-4">
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={html} alt="html" className="size-12 object-cover" />
-                </div>
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={react} alt="react" className="w-auto h-auto object-cover" />
-                </div>
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={js} alt="js" className="size-10 object-cover" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold mb-4 mt-12 font-[Momo Trust Display] ">Frontend Development</p>
-              <p className="text-base font-normal mb-10 font-[Momo Trust Sans]">Uso de react para la creacion de proyectos, asi como manejo de lenguaje de etiquetado HTML y lenguaje de programacion JS</p>
-            </div>
-            {/* Cloud & Backend Development */}
-            <div className="w-lg h-80 p-4 rounded-2xl bg-sky-500/20 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-white">
-              <div className="flex justify-center items-center gap-4">
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={azure} alt="cloud" className="size-12 object-cover" />
-                </div>
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={aws} alt="backend" className="size-10 object-cover" />
-                </div>
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={vercel} alt="backend" className="w-auto h-auto object-cover" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold mb-4 mt-12 font-[Momo Trust Display] ">Cloud & Backend Development</p>
-              <p className="text-base font-normal mb-10 font-[Momo Trust Sans]">Uso de react para la creacion de proyectos, asi como manejo de lenguaje de etiquetado HTML y lenguaje de programacion JS</p>
-            </div>
-          </div>
-          {/* segunda columna */}
-          <div className="flex flex-col gap-4">
-            {/* Styling & Design */}
-            <div className="w-72 h-80 p-4 rounded-2xl bg-sky-500/20 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-white">
-              <div className="flex justify-center items-center gap-4">
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={css} alt="css" className="size-12 object-cover" />
-                </div>
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={tailwind} alt="tailwind" className="w-auto h-auto object-cover" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold mb-4 mt-12 font-[Momo Trust Display] ">Styling & Design</p>
-              <p className="text-base font-normal mb-10 font-[Momo Trust Sans]">Uso de etiquetas CSS y Tailwind CSS para poder construir los proyectos y mantener un diseño responsive y adaptativo a cualquier dispositivo.</p>
-            </div>
-            {/* UI/UX Design */}
-            <div className="w-72 p-4 rounded-2xl bg-sky-500/20 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-white">
-              <div className="flex justify-center items-center gap-4">
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={figma} alt="figma" className="w-auto h-auto object-cover" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold mb-4 mt-12 font-[Momo Trust Display] ">UI/UX Design</p>
-              <p className="text-base font-normal mb-2 font-[Momo Trust Sans]">Uso de Figma para poder construir los proyectos y mantener un diseño responsive y adaptativo a cualquier dispositivo.</p>
-            </div>
-          </div>
-          {/* tercera columna */}
-          <div className="flex flex-col gap-4">
-            {/* backend development */}
-            <div className="w-lg h-80 p-4 rounded-2xl bg-sky-500/20 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-white">
-              <div className="flex justify-center items-center gap-4">
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={node} alt="node" className="w-auto h-auto object-cover" />
-                </div>
-                <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                  <img src={express} alt="express" className="w-auto h-auto object-cover" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold mb-4 mt-12 font-[Momo Trust Display] ">Backend Development</p>
-              <p className="text-base font-normal mb-10 font-[Momo Trust Sans]">Developing robust server-side logic and APIs to power dynamic and scalable web applications.</p>
-            </div>
+      </header>
 
-            <div className="grid grid-cols-2">
-              {/* mobile app development */}
-              <div className="w-64 h-80 p-4 rounded-2xl bg-sky-500/20 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-white">
-                <div className="flex justify-center items-center gap-4">
-                  <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                    <img src={native} alt="native" className="w-auto h-auto object-cover" />
-                  </div>
-                </div>
-                <p className="text-2xl font-bold mb-4 mt-12 font-[Momo Trust Display] ">Mobile App Development</p>
-                <p className="text-base font-normal mb-10 font-[Momo Trust Sans]">Developing mobile applications for iOS and Android platforms using React Native and Expo.</p>
-              </div>
-              {/* version control & collaboration */}
-              <div className="w-64 h-80 p-4 rounded-2xl bg-sky-500/20 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border border-white">
-                <div className="flex justify-center items-center gap-4">
-                  <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                    <img src={git} alt="git" className="w-auto h-auto object-cover" />
-                  </div>
-                  <div className="size-20 p-2 rounded-full bg-black flex justify-center items-center">
-                    <img src={github} alt="github" className="w-auto h-auto object-cover" />
-                  </div>
-                </div>
-                <p className="text-2xl font-bold mb-4 mt-12 font-[Momo Trust Display] ">Version Control & Collaboration</p>
-                <p className="text-base font-normal mb-10 font-[Momo Trust Sans]">Using Git and GitHub for version control and collaboration on projects.</p>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div>
-      {/* seccion de proyectos */}
-      {/* seccion de contacto */}
+      <StickyNav />
+
+      {/* About me */}
+      <section
+        id="about-me"
+        className="scroll-mt-32 mb-20 grid max-w-6xl grid-cols-1 items-center gap-10 px-6 mx-auto lg:grid-cols-2"
+      >
+        <div
+          className={`animate-fade-in-up h-72 rounded-[20px] bg-gradient-to-br from-sky-200/60 to-sky-500/30 lg:h-96 ${cardShadow}`}
+          style={stagger(0)}
+          aria-hidden
+        />
+        <div className="animate-fade-in-up" style={stagger(1)}>
+          <h2 className="mb-6 text-2xl font-bold md:text-3xl">About me</h2>
+          <p className="mb-6 text-base leading-relaxed">
+            Desarrollador Full Stack enfocado en la creación de aplicaciones web
+            modernas, escalables y centradas en la experiencia de usuario.
+            Actualmente trabajo con tecnologías como React, Node.js, Express,
+            PostgreSQL y MongoDB, desarrollando soluciones frontend y backend
+            para distintos tipos de proyectos web.
+          </p>
+          <p className="mb-8 text-base leading-relaxed">
+            Soy autodidacta, adaptable y aprendo rápido. Busco seguir creciendo
+            profesionalmente colaborando en proyectos reales y creando
+            soluciones digitales que generen impacto.
+          </p>
+          <button type="button" className={pillButton}>
+            Descargar CV
+          </button>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="scroll-mt-32 mb-24 px-4">
+        <h2
+          className="animate-fade-in-up mx-auto mb-12 max-w-3xl text-center text-2xl font-bold md:text-3xl"
+          style={stagger(0)}
+        >
+          SKILLS Y HERRAMIENTAS QUE SIEMPRE USO
+        </h2>
+
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-12">
+          {skills.map((skill, index) => (
+            <SkillCard
+              key={skill.id}
+              title={skill.title}
+              description={skill.description}
+              icons={skill.icons}
+              className={skill.gridClass}
+              style={stagger(index + 1)}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="scroll-mt-32 mb-24 px-4">
+        <h2
+          className="animate-fade-in-up mb-14 text-center text-2xl font-bold md:text-3xl"
+          style={stagger(0)}
+        >
+          Projects
+        </h2>
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              previewUrl={project.previewUrl}
+              githubUrl={project.githubUrl}
+              style={stagger(index + 1)}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <ContactSection style={stagger(0)} />
     </div>
   );
 }
