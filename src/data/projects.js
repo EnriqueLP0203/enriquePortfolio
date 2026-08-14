@@ -17,8 +17,8 @@ export const projects = [
       "Sitio web para la empresa COME-EVA, con catalogo de productos y cotizador de servicios online",
     image: comeeva1,
     images: [comeeva1, comeeva2, comeeva3, comeeva4],
-    previewUrl: "#",
-    githubUrl: "https://github.com",
+    previewUrl: "https://comeeva.com",
+    githubUrl: "https://github.com/EnriqueLP0203/comeeva",
   },
   {
     id: "travel-logic",
@@ -32,7 +32,7 @@ export const projects = [
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
     ],
     previewUrl: "#",
-    githubUrl: "https://github.com",
+    githubUrl: "#",
   },
   {
     id: "orion",
@@ -43,6 +43,6 @@ export const projects = [
     image: orion1,
     images: [orion1, orion2, orion3, orion4],
     previewUrl: "#",
-    githubUrl: "https://github.com",
+    githubUrl: "#",
   },
 ];

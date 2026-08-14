@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { pillButton } from "../lib/styles";
 import ProjectGallery from "./ProjectGallery";
+import ModalNotRepositorie from "./modalNotRepositorie";
 
 export default function ProjectCard({
   title,
@@ -13,9 +14,11 @@ export default function ProjectCard({
   tech,
 }) {
   const [galleryOpen, setGalleryOpen] = useState(false);
+  const [unavailableOpen, setUnavailableOpen] = useState(false);
   const galleryImages = images.length > 0 ? images : image ? [image] : [];
   const cover = galleryImages[0];
   const hasGallery = galleryImages.length > 1;
+  const hasGithub = githubUrl && githubUrl !== "#";
 
   return (
     <div
@@ -62,14 +65,24 @@ export default function ProjectCard({
           >
             Preview
           </a>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={pillButton}
-          >
-            View GitHub
-          </a>
+          {hasGithub ? (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={pillButton}
+            >
+              View GitHub
+            </a>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setUnavailableOpen(true)}
+              className={pillButton}
+            >
+              View GitHub
+            </button>
+          )}
         </div>
       </div>
       {galleryOpen && (
@@ -78,6 +91,9 @@ export default function ProjectCard({
           images={galleryImages}
           onClose={() => setGalleryOpen(false)}
         />
+      )}
+      {unavailableOpen && (
+        <ModalNotRepositorie onClose={() => setUnavailableOpen(false)} />
       )}
     </div>
   );
