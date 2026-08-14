@@ -12,6 +12,7 @@ import express from "../assets/express.webp";
 import native from "../assets/native.webp";
 import git from "../assets/git.webp";
 import github from "../assets/github.webp";
+import blade from "../assets/blade.webp";
 
 export const skills = [
   {
@@ -19,7 +20,7 @@ export const skills = [
     title: "Frontend Development",
     description:
       "React para interfaces modernas, HTML semántico y JavaScript para experiencias interactivas.",
-    icons: [html, react, js],
+    icons: [html, react, js, blade],
     gridClass: "lg:col-span-4 lg:row-span-2",
   },
   {
