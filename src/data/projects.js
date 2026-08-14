@@ -2,6 +2,10 @@ import comeeva1 from "../assets/Proyects/Comeeva/comeeva1.png";
 import comeeva2 from "../assets/Proyects/Comeeva/comeeva2.png";
 import comeeva3 from "../assets/Proyects/Comeeva/comeeva3.png";
 import comeeva4 from "../assets/Proyects/Comeeva/comeeva4.png";
+import orion1 from "../assets/Proyects/Orion/orion1.png";
+import orion2 from "../assets/Proyects/Orion/orion2.jpeg";
+import orion3 from "../assets/Proyects/Orion/orion3.jpeg";
+import orion4 from "../assets/Proyects/Orion/orion4.jpeg";
 
 /** Añade capturas extra en `images` para activar el carrusel de Ver más */
 export const projects = [
@@ -36,11 +40,8 @@ export const projects = [
     tech: ["React", "Vite", "Tailwind", "JavaScript", "Node.js", "Express", "PostgreSQL"],
     description:
       "Aplicacion web enfocada a la gestion de negocios deportivos para gestionar clientes, planes, ventas y personal",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    ],
+    image: orion1,
+    images: [orion1, orion2, orion3, orion4],
     previewUrl: "#",
     githubUrl: "https://github.com",
   },
