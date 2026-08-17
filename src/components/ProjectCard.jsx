@@ -2,6 +2,7 @@ import { useState } from "react";
 import { pillButton } from "../lib/styles";
 import ProjectGallery from "./ProjectGallery";
 import ModalNotRepositorie from "./modalNotRepositorie";
+import ModalNotPreview from "./modalNotPreview";
 
 export default function ProjectCard({
   title,
@@ -15,10 +16,12 @@ export default function ProjectCard({
 }) {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [unavailableOpen, setUnavailableOpen] = useState(false);
+  const [notPreviewOpen, setNotPreviewOpen] = useState(false);
   const galleryImages = images.length > 0 ? images : image ? [image] : [];
   const cover = galleryImages[0];
   const hasGallery = galleryImages.length > 1;
   const hasGithub = githubUrl && githubUrl !== "#";
+  const hasPreview = previewUrl && previewUrl !== "#";
 
   return (
     <div
@@ -57,14 +60,24 @@ export default function ProjectCard({
           {description}
         </p>
         <div className="flex flex-wrap gap-3">
-          <a
-            href={previewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={pillButton}
-          >
-            Preview
-          </a>
+          {hasPreview ? (
+            <a
+              href={previewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={pillButton}
+            >
+              Preview
+            </a>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setNotPreviewOpen(true)}
+              className={pillButton}
+            >
+              Preview
+            </button>
+          )}
           {hasGithub ? (
             <a
               href={githubUrl}
@@ -94,6 +107,9 @@ export default function ProjectCard({
       )}
       {unavailableOpen && (
         <ModalNotRepositorie onClose={() => setUnavailableOpen(false)} />
+      )}
+      {notPreviewOpen && (
+        <ModalNotPreview onClose={() => setNotPreviewOpen(false)} />
       )}
     </div>
   );

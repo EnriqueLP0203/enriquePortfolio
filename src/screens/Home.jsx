@@ -117,6 +117,7 @@ export default function Home() {
               tech={project.tech}
               previewUrl={project.previewUrl}
               githubUrl={project.githubUrl}
+              isMainProject={project.isMainProject}
               style={stagger(index + 1)}
             />
           ))}

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { pillButton, negativeButton } from "../lib/styles";
 
-export default function ModalNotRepositorie({ onClose }) {
+export default function ModalNotPreview({ onClose }) {
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function ModalNotRepositorie({ onClose }) {
       ref={dialogRef}
       role="dialog"
       aria-modal="true"
-      aria-labelledby="no-repo-title"
+      aria-labelledby="no-preview-title"
       tabIndex={-1}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 outline-none"
       onClick={onClose}
@@ -38,10 +38,10 @@ export default function ModalNotRepositorie({ onClose }) {
         onClick={(event) => event.stopPropagation()}
       >
         <h2
-          id="no-repo-title"
+          id="no-preview-title"
           className="font-[Momo_Trust_Display] text-xl font-bold"
         >
-          Este proyecto no tiene un repositorio público
+          Este proyecto no tiene una vista previa
         </h2>
         <p className="font-[Momo_Trust_Sans] text-sm leading-relaxed text-black/80">
           Puedes contactar con el desarrollador para obtener más información

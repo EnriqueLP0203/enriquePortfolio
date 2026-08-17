@@ -12,3 +12,6 @@ export const navPill =
 
 export const inputField =
   "w-full rounded-2xl border border-white bg-sky-500/10 px-4 py-3 text-base font-[Momo_Trust_Sans] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] outline-none transition focus:ring-2 focus:ring-sky-400 focus:bg-white/80";
+
+export const negativeButton =
+  "bg-gradient-to-b from-white to-red-500 border border-stone-300 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] text-black text-base font-medium px-4 py-2 rounded-full";
