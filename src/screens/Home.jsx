@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import avatar from "../assets/avatar.webp";
 import SkillCard from "../components/SkillCard";
 import ProjectCard from "../components/ProjectCard";
@@ -12,6 +13,8 @@ const stagger = (index) => ({
 });
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div>
       {/* Hero */}
@@ -74,12 +77,12 @@ export default function Home() {
 
       {/* Skills */}
       <section id="skills" className="scroll-mt-32 mb-24 px-4">
-        <h2
+        <h1
           className="animate-fade-in-up mx-auto mb-12 max-w-3xl text-center text-2xl font-bold md:text-3xl"
           style={stagger(0)}
         >
           SKILLS Y HERRAMIENTAS QUE SIEMPRE USO
-        </h2>
+        </h1>
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-12">
           {skills.map((skill, index) => (
@@ -97,12 +100,12 @@ export default function Home() {
 
       {/* Projects */}
       <section id="projects" className="scroll-mt-32 mb-24 px-4">
-        <h2
-          className="animate-fade-in-up mb-14 text-center text-2xl font-bold md:text-3xl"
+        <h1
+          className="animate-fade-in-up mb-14 text-center text-4xl font-extrabold"
           style={stagger(0)}
         >
-          Projects
-        </h2>
+          MAIN PROJECTS
+        </h1>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
           {projects.map((project, index) => (
             <ProjectCard
@@ -117,6 +120,11 @@ export default function Home() {
               style={stagger(index + 1)}
             />
           ))}
+        </div>
+        <div className="flex justify-center mt-10">
+          <button type="button" className={pillButton} onClick={() => navigate('/projects')}>
+            View All Projects
+          </button>
         </div>
       </section>
 
