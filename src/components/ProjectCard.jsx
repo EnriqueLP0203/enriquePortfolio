@@ -12,7 +12,7 @@ export default function ProjectCard({
   previewUrl,
   githubUrl,
   style,
-  tech,
+  tech = [],
 }) {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [unavailableOpen, setUnavailableOpen] = useState(false);
