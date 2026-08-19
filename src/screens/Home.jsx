@@ -12,6 +12,8 @@ const stagger = (index) => ({
   animationDelay: `${index * 0.5}s`,
 });
 
+const mainProjects = projects.filter((project) => project.isMainProject);
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -107,7 +109,7 @@ export default function Home() {
           MAIN PROJECTS
         </h1>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
-          {projects.map((project, index) => (
+          {mainProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               title={project.title}
@@ -117,7 +119,6 @@ export default function Home() {
               tech={project.tech}
               previewUrl={project.previewUrl}
               githubUrl={project.githubUrl}
-              isMainProject={project.isMainProject}
               style={stagger(index + 1)}
             />
           ))}
