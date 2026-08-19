@@ -15,3 +15,5 @@ export const inputField =
 
 export const negativeButton =
   "bg-gradient-to-b from-white to-red-500 border border-stone-300 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] text-black text-base font-medium px-4 py-2 rounded-full";
+
+export const skillContainer = "text-sm text-white font-medium rounded-full bg-sky-500 px-4 py-2 hover:bg-sky-600 hover:scale-105 transition-all duration-300";
