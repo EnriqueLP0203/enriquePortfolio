@@ -16,6 +16,10 @@ h1 {
   @apply text-4xl font-bold;
 }
 
+h2 {
+  font-family: "Momo Trust Sans", ui-sans-serif, system-ui, sans-serif;
+  @apply text-2xl font-bold;
+}
 @keyframes fade-in-up {
   from {
     opacity: 0;
