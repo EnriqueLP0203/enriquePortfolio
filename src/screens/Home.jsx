@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import avatar from "../assets/avatar.webp";
-import SkillCard from "../components/SkillCard";
 import ProjectCard from "../components/ProjectCard";
 import ContactSection from "../components/ContactSection";
-import { skills } from "../data/skills";
+import SkillsShowcase from "../components/SkillsShowcase";
 import { projects } from "../data/projects";
 import StickyNav from "../components/StickyNav";
 import { cardShadow, pillButton } from "../lib/styles";
@@ -58,7 +57,7 @@ export default function Home() {
           aria-hidden
         />
         <div className="animate-fade-in-up" style={stagger(1)}>
-          <h2 className="mb-6 text-2xl font-bold md:text-3xl">About me</h2>
+          <h1 className="mb-6 text-2xl font-bold md:text-3xl">Quien soy yo</h1>
           <p className="mb-6 text-base leading-relaxed">
             Desarrollador Full Stack enfocado en la creación de aplicaciones web
             modernas, escalables y centradas en la experiencia de usuario.
@@ -85,19 +84,7 @@ export default function Home() {
         >
           SKILLS Y HERRAMIENTAS QUE SIEMPRE USO
         </h1>
-
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-12">
-          {skills.map((skill, index) => (
-            <SkillCard
-              key={skill.id}
-              title={skill.title}
-              description={skill.description}
-              icons={skill.icons}
-              className={skill.gridClass}
-              style={stagger(index + 1)}
-            />
-          ))}
-        </div>
+        <SkillsShowcase />
       </section>
 
       {/* Projects */}

@@ -22,12 +22,12 @@ export default function ContactSection({ style }) {
       style={style}
       aria-labelledby="contact-heading"
     >
-      <h2
+      <h1
         id="contact-heading"
         className="mb-10 text-center text-2xl font-bold md:text-3xl"
       >
         Contact
-      </h2>
+      </h1>
 
       <form
         onSubmit={handleSubmit}
