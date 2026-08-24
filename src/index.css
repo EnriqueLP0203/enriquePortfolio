@@ -50,6 +50,21 @@ h2 {
   }
 }
 
+@keyframes skills-panel-swap {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  45% {
+    opacity: 0.4;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.7s ease-out both;
 }
@@ -60,6 +75,10 @@ h2 {
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+.animate-skills-panel {
+  animation: skills-panel-swap 0.7s ease-out both;
 }
 
 .skill-card-hover {

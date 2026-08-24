@@ -98,22 +98,23 @@ export default function SkillsShowcase() {
       </div>
 
       <div
+        key={activeCategory.id}   // ← esto fuerza remount y re-lanza la animación
         role="tabpanel"
         id={`skill-panel-${activeCategory.id}`}
         aria-labelledby={`skill-tab-${activeCategory.id}`}
         data-slot="skill-panel"
-        className={skillCardBase}
+        className={`${skillCardBase} animate-skills-panel`}
       >
         <h2 className="mb-8 text-center text-xl md:text-2xl">{activeCategory.title}</h2>
         <ul className="flex flex-wrap items-start justify-center gap-8">
           {activeCategory.items.map((item) => (
-            <li key={item.name} className="flex w-24 flex-col items-center gap-2">
-              <div className="flex size-16 items-center justify-center rounded-full bg-black p-2">
+            <li key={item.name} className="flex w-32 flex-col items-center gap-2">
+              <div className="flex size-20 items-center justify-center rounded-[20px] bg-black border border-stone-300 p-2">
                 {item.icon ? (
                   <img
                     src={item.icon}
                     alt=""
-                    className="size-10 object-contain"
+                    className="size-14 object-contain"
                   />
                 ) : null}
               </div>

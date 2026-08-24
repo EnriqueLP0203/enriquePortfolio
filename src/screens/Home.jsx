@@ -57,7 +57,7 @@ export default function Home() {
           aria-hidden
         />
         <div className="animate-fade-in-up" style={stagger(1)}>
-          <h1 className="mb-6 text-2xl font-bold md:text-3xl">About me</h1>
+          <h1 className="mb-6 text-2xl font-bold md:text-3xl">Quien soy yo</h1>
           <p className="mb-6 text-base leading-relaxed">
             Desarrollador Full Stack enfocado en la creación de aplicaciones web
             modernas, escalables y centradas en la experiencia de usuario.
